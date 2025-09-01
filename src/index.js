@@ -13,6 +13,7 @@ import { createInvoiceItemTable } from "./data/createInvoiceItemTable.js";
 import { createPaymentTable } from "./data/createPaymentTable.js";
 import paymentRouter from "./routes/paymentRouter.js";
 import { createRefreshTokenTable } from "./data/createRefreshTokenTable.js";
+import { createBusinessTable } from "./data/createBusinessTable.js";
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use("/api", paymentRouter);
 //middleware
 app.use(errorHandler);
 
+createBusinessTable();
 createUserTable();
 createInvoiceTable();
 createInvoiceItemTable();

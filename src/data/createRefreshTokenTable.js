@@ -4,7 +4,7 @@ export const createRefreshTokenTable = async () => {
   const createTableQuery = `
         CREATE TABLE IF NOT EXISTS RefreshToken (
             id BIGSERIAL PRIMARY KEY,
-            user_id BIGINT NOT NULL REFERENCES "user"(user_id) ON DELETE CASCADE,
+            user_id BIGINT NOT NULL REFERENCES "users"(user_id) ON DELETE CASCADE,
             token TEXT NOT NULL,
             expires_at TIMESTAMP NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
